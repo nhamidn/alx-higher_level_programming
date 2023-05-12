@@ -2,15 +2,15 @@
 import sys
 
 if __name__ == "__main__":
-    argStr = "{:d} argument"
+    msg = "{:d} argument"
     argc = len(sys.argv) - 1
     if argc == 0:
-        argStr += 's.'
+        msg += 's.'
     elif argc == 1:
-        argStr += ':'
+        msg += ':'
     else:
-        argStr += 's:'
-    print(argStr.format(argc))
+        msg += 's:'
+    print(msg.format(argc))
 
     i = 0
     for i, arg in enumerate(sys.argv):
