@@ -12,8 +12,6 @@ if __name__ == "__main__":
         msg += 's:'
     print(msg.format(argc))
 
-    i = 0
-    for arg in sys.argv:
+    for i, arg in enumerate(sys.argv):
         if i != 0:
-           print("{:d}: {:s}".format(i, arg))
-        i += 1
+            print("{:d}: {:s}".format(i, arg))
