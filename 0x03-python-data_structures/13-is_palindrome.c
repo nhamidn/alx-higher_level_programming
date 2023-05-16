@@ -7,8 +7,9 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *lst = *head, *tmp;
-	int len = 0, i, j;
+	listint_t *lst = *head;
+	int len = 0, i;
+	int *stack;
 
 	while (lst != NULL)
 	{
@@ -17,22 +18,16 @@ int is_palindrome(listint_t **head)
 	}
 	lst = *head;
 	i = 0;
+	stack = malloc(sizeof(int) * (len + 1));
+	if (stack == NULL)
+		return (0);
 	while (lst != NULL)
 	{
+		stack[i] = lst->n;
 		if (i >= ((len / 2) + (len % 2)))
 		{
-			tmp = *head;
-			j = 0;
-			while (tmp != NULL)
-			{
-				if (j == (len - i - 1))
-				{
-					if (tmp->n != lst->n)
-						return (0);
-				}
-				j++;
-				tmp = tmp->next;
-			}
+			if (lst->n != stack[len - i - 1])
+				return (0);
 		}
 		i++;
 		lst = lst->next;
