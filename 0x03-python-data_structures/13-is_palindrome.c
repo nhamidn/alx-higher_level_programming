@@ -18,17 +18,18 @@ int is_palindrome(listint_t **head)
 	}
 	lst = *head;
 	i = 0;
-	stack = malloc(sizeof(int) * (len + 1));
+	stack = malloc(sizeof(int) * (len / 2));
 	if (stack == NULL)
 		return (0);
 	while (lst != NULL)
 	{
-		stack[i] = lst->n;
 		if (i >= ((len / 2) + (len % 2)))
 		{
 			if (lst->n != stack[len - i - 1])
 				return (0);
 		}
+		else
+			stack[i] = lst->n;
 		i++;
 		lst = lst->next;
 	}
