@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *lst = *head;
 	int len = 0, i;
-	int *stack;
+	int stack[1024];
 
 	while (lst != NULL)
 	{
@@ -18,9 +18,6 @@ int is_palindrome(listint_t **head)
 	}
 	lst = *head;
 	i = 0;
-	stack = malloc(sizeof(int) * (len / 2));
-	if (stack == NULL)
-		return (0);
 	while (lst != NULL)
 	{
 		if (i >= ((len / 2) + (len % 2)))
