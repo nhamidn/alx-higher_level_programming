@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 class Square:
+    """A class that defines a square"""
     def __init__(self, size=0):
+        """Init function of the class"""
         self.__size = size
         if type(size) != int:
             raise TypeError("size must be an integer")
