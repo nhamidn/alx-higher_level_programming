@@ -8,13 +8,17 @@ def roman_to_int(roman_string):
                "D": 500,
                "M": 1000}
     result = 0
+
+    if roman_string is None or type(roman_string) != str:
+        return None
     dict_len = len(roman_string) - 1
 
     while dict_len > -1:
+        if roman_string[dict_len] not in my_dict.keys():
+            return None
         if dict_len < (len(roman_string) - 1) \
                 and my_dict[roman_string[dict_len]] \
-                < my_dict[roman_string[dict_len + 1]] \
-                and roman_string[dict_len] == "I":
+                < my_dict[roman_string[dict_len + 1]]:
             result -= my_dict[roman_string[dict_len]]
         else:
             result += my_dict[roman_string[dict_len]]
