@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
     result = 0
 
     if roman_string is None or type(roman_string) != str:
-        return None
+        return 0
     dict_len = len(roman_string) - 1
 
     while dict_len > -1:
