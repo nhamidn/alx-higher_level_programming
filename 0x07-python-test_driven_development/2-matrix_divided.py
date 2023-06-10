@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""Files that define a function that divide element of matrix"""
+
 
 def matrix_divided(matrix, div):
+    """function that divides all elements of a matrix"""
     msg = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list):
         raise TypeError(msg)
