@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
-A file that defines lookpu method
+A file that defines lookup method
 """
 
 
 def lookup(obj):
-    """function that returns the attributes and methods of an object"""
-
+    """function that gets the attributes & methods of an object"""
     return dir(obj)
