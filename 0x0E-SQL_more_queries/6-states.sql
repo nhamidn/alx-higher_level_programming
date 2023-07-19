@@ -1,2 +1,8 @@
--- Create the table unique_id if it doesn't exist
-CREATE TABLE IF NOT EXISTS unique_id (id INT DEFAULT 1 UNIQUE, name VARCHAR(256));
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
+
+-- Switch to the newly created database
+USE hbtn_0d_usa;
+
+-- Create the table "states" if it doesn't exist
+CREATE TABLE IF NOT EXISTS states (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(256) NOT NULL);
